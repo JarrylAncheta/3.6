@@ -1,13 +1,12 @@
-
 function setup() {
-  createCanvas(600, 600);
-  background(220, 130, 300)
-  strokeWeight(9);
-
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-  strokeWeight(7);
+  strokeWeight(11);
+  push();
+  translate(width/5.2,height/2.8);
+  scale(2.2,1.1);
   line(10, 10, 390, 10);
   line(50, 50, 350, 50);
   line(50, 250, 50, 50);
@@ -44,29 +43,32 @@ function draw() {
   line(90, 250, 50, 250);
   line(240, 90, 240, 130);
   line(170, 200, 130, 200);
+  pop();
+
+  background(300,100, 930, 1)
 
   if (mouseIsPressed){
-    stroke(map(mouseX, 20, 900, 0, 600, true))
+    stroke(map(mouseX, 200, 900, 2000, 1000, true))
     line(mouseX, mouseY, pmouseX, pmouseY);
-  }
 
-  function draw() {
-    if (mouseIsPressed) {
-      background(backgroundColor);
-      backgroundColor--;
-      //array.push([mouseX, mouseY])
     }
   }
 
-}
 
   function keyTyped(){
 
     if (key === 's'){
       //save image
       saveCanvas(`fileName`, `png`);
-    } else if (key === 'd'){
+    //} else if (key === `d`) {
       //display image
+    } else if (key ===`c`){
+      //clear image
+      clear();
+
+
+      for(let i = 0; i < array.length - 1; i++){
+    }
     }
 
     return false;
